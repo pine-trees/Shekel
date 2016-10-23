@@ -10,13 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var userBalance = BalanceInPeriod(income: 50000.0, expenses: 0.0)
+    var userBalance = BalanceInPeriod(income: 50000.0, expenses: 0.0, today: 1)
     
+    @IBOutlet weak var spendFiled: UITextField!
+    @IBAction func spendMoney(_ sender: AnyObject) {
+        userBalance.spend(money: Double(spendFiled.text!)!)
+        console()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(userBalance.monthlyBalance)
-        print(userBalance.dailyBalance)
-        print(userBalance.calcNextSurplus())
+       console()
        
     }
 
@@ -25,6 +28,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-   
+    func console () {
+        print(userBalance.today)
+        print(userBalance.daysLeft)
+        print("total expenses:\(userBalance.runningExpenses)")
+        print("daily budget: \(userBalance.dailyBudget)")
+        print("balance: \(userBalance.balance)")
+        print(userBalance.plannedBudget)
+    }
 }
 

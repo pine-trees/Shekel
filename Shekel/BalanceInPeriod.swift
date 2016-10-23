@@ -11,52 +11,54 @@ import Foundation
 class BalanceInPeriod {
     let date = Date()
     let calendar = Calendar.current
-    var daysInMonth: Int {
-        get {
-            return (calendar.range(of: .day, in: .month, for: date))!.count
-        }
-    }
     var today: Int
-    var daysLeftInMonth: Int {
-        get {
-            return daysInMonth - today
-        }
-    }
-    
-    var monthlyIncome: Double
-    var monthlyExpenses: Double
-    var monthlyBalance: Double {
-        get {
-            return monthlyIncome - monthlyExpenses
-        }
-    }
-    
-    var dailyBalance: Double {
-        get {
-            return monthlyBalance/Double(daysInMonth)
-        }
-    }
-    var surplus: Double {
-        get {
-            return dailyBalance
-        }
-    }
-    
-    init (income: Double, expenses: Double) {
-        self.monthlyIncome = income
-        self.monthlyExpenses = expenses
-        
-        self.today = calendar.component(.day, from: date)
-    }
-    
-    func calcNextSurplus () -> [Double] {
-        var _surplus = self.surplus
-        var surplusArray = [self.surplus]
-        for _ in 2...31 {
-            _surplus = dailyBalance + _surplus
-            surplusArray.append(_surplus)
-        }
-        return surplusArray
-    }
 
+    var daysLeft: Int {
+        get {
+            return ((calendar.range(of: .day, in: .month, for: date))?.count)! - today
+        }
+    }
+    
+    
+    var baseIncome: Double
+    var baseExpenses: Double
+    
+    var runningIncome: Double
+    var runningExpenses: Double
+    
+    var balance: Double {
+        get {
+            return runningIncome - runningExpenses
+        }
+    }
+    var dailyBudget: Double {
+        get {
+            return balance/Double(daysLeft)
+        }
+    }
+    
+    var plannedBudget: [Double] {
+        get {
+            var surplus = 0.0
+            var planned = [Double]()
+            for _ in 1...daysLeft {
+                let leftover = dailyBudget + surplus
+                surplus = leftover
+                planned.append(surplus)
+            }
+            return planned
+        }
+    }
+    
+    init(income: Double, expenses: Double, today: Int) {
+        self.baseIncome = income
+        self.baseExpenses = expenses
+        self.runningIncome = income
+        self.runningExpenses = expenses
+        self.today = today
+    }
+    
+    func spend (money: Double) {
+       runningExpenses = runningExpenses + money
+    }
 }
