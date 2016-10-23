@@ -49,6 +49,7 @@ class BalanceInPeriod {
             return planned
         }
     }
+    var todaysExpenses = 0.0
     
     init(income: Double, expenses: Double, today: Int) {
         self.baseIncome = income
@@ -59,6 +60,13 @@ class BalanceInPeriod {
     }
     
     func spend (money: Double) {
-       runningExpenses = runningExpenses + money
+        runningExpenses = runningExpenses + money
+        todaysExpenses += money
+    }
+    
+    func dailyPercentage ()-> Double {
+        let percent = 100*todaysExpenses/dailyBudget
+        return percent
+        
     }
 }

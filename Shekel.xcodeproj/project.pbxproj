@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442224531DBD5628004658F2 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442224521DBD5628004658F2 /* Ring.swift */; };
 		446919361DBAC9780084BE80 /* BalanceInPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446919351DBAC9780084BE80 /* BalanceInPeriod.swift */; };
 		44C758411DAD7E770082DB7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C758401DAD7E770082DB7E /* AppDelegate.swift */; };
 		44C758431DAD7E770082DB7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C758421DAD7E770082DB7E /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		442224521DBD5628004658F2 /* Ring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
 		446919351DBAC9780084BE80 /* BalanceInPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceInPeriod.swift; sourceTree = "<group>"; };
 		44C7583D1DAD7E770082DB7E /* Shekel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shekel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C758401DAD7E770082DB7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				446919351DBAC9780084BE80 /* BalanceInPeriod.swift */,
 				44C758421DAD7E770082DB7E /* ViewController.swift */,
 				44C758441DAD7E770082DB7E /* Main.storyboard */,
+				442224521DBD5628004658F2 /* Ring.swift */,
 				44C758471DAD7E770082DB7E /* Assets.xcassets */,
 				44C758491DAD7E770082DB7E /* LaunchScreen.storyboard */,
 				44C7584C1DAD7E770082DB7E /* Info.plist */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44C758431DAD7E770082DB7E /* ViewController.swift in Sources */,
+				442224531DBD5628004658F2 /* Ring.swift in Sources */,
 				446919361DBAC9780084BE80 /* BalanceInPeriod.swift in Sources */,
 				44C758411DAD7E770082DB7E /* AppDelegate.swift in Sources */,
 			);

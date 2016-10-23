@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var userBalance = BalanceInPeriod(income: 50000.0, expenses: 0.0, today: 1)
 
     @IBOutlet weak var BG: UIView!
+    @IBOutlet weak var ring: Ring!
     //BG Gradient set UP
     let gradient = CAGradientLayer()
     
@@ -24,9 +25,12 @@ class ViewController: UIViewController {
         gradient.frame = BG.bounds
         gradient.colors = [color1.cgColor, color2.cgColor]
         BG.layer.insertSublayer(gradient, at: 0)
+        ring.animateInitial()
         
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
