@@ -32,10 +32,19 @@ class Ring: UIImageView {
         self.animationDuration = 2
         self.animationRepeatCount = 1
         self.startAnimating()
-        
     }
     
-    func animateToBalance(balancePercentage: Int) {
-        
+    func animateToBalance(endFrame: Int) {
+        let imgNum = NSString(format: "%05i", endFrame)
+        self.image = UIImage(named: "Ring_\(imgNum).png")
+        var imgArray = [UIImage]()
+        for x in 0...endFrame {
+            let string = NSString(format: "%05i", x)
+            imgArray.append(UIImage(named: "Ring_\(string).img")!)
+        }
+        self.animationImages = imgArray
+        self.animationDuration = 3*(Double(endFrame)/100)
+        self.animationRepeatCount = 1
+        self.startAnimating()
     }
 }

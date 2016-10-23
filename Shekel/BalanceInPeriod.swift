@@ -89,9 +89,9 @@ class BalanceInPeriod {
         
     }
     
-    func dailyPercentage ()-> Double {
-        let percent = 100*todaysExpenses/dailyBudget
-        return percent
+    func dailyPercentage ()-> Int {
+        let percent = 100*(todaysExpenses/dailyBudget)
+        return Int(percent)
         
     }
 }

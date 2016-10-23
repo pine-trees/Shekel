@@ -25,7 +25,10 @@ class ViewController: UIViewController {
         gradient.frame = BG.bounds
         gradient.colors = [color1.cgColor, color2.cgColor]
         BG.layer.insertSublayer(gradient, at: 0)
+        userBalance.spend(money: 200)
         ring.animateInitial()
+        let timer = Timer(timeInterval: 10, target: self, selector: ("displayMoney"), userInfo: nil, repeats: false)
+        timer.fire()
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -35,7 +38,9 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    func displayMoney() {
+        ring.animateToBalance(endFrame: userBalance.dailyPercentage())
+    }
     func console () {
         print(userBalance.today)
         print(userBalance.daysLeft)
@@ -44,12 +49,13 @@ class ViewController: UIViewController {
         print("balance: \(userBalance.balance)")
         print(userBalance.plannedBudget)
     }
-}
-func RGBtoUIColor (red: Int, green: Int, blue: Int) -> UIColor {
-    let redFloat = Float(red)/255.0
-    let greenFloat = Float(green)/255.0
-    let blueFloat = Float(blue)/255.0
-    let output = UIColor(red: CGFloat(redFloat), green: CGFloat(greenFloat), blue: CGFloat(blueFloat), alpha: 1.0)
-    return output
+
+    func RGBtoUIColor (red: Int, green: Int, blue: Int) -> UIColor {
+        let redFloat = Float(red)/255.0
+        let greenFloat = Float(green)/255.0
+        let blueFloat = Float(blue)/255.0
+        let output = UIColor(red: CGFloat(redFloat), green: CGFloat(greenFloat), blue: CGFloat(blueFloat), alpha: 1.0)
+        return output
+    }
 }
 
