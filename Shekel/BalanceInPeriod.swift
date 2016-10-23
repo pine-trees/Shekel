@@ -12,7 +12,7 @@ class BalanceInPeriod {
     let date = Date()
     let calendar = Calendar.current
     var today: Int
-
+    
     var daysLeft: Int {
         get {
             return ((calendar.range(of: .day, in: .month, for: date))?.count)! - today
@@ -36,20 +36,25 @@ class BalanceInPeriod {
             return balance/Double(daysLeft)
         }
     }
+    var todayBalance: Double?
+    
+    var todaysExpenses = 0.0
     
     var plannedBudget: [Double] {
         get {
-            var surplus = 0.0
-            var planned = [Double]()
-            for _ in 1...daysLeft {
-                let leftover = dailyBudget + surplus
+            var surplus = todayBalance
+            var planned = [todayBalance]
+            for _ in 2...daysLeft {
+                let leftover = dailyBudget + surplus!
                 surplus = leftover
-                planned.append(surplus)
+                planned.append(surplus!)
             }
-            return planned
+            
+            return planned as! [Double]
         }
+        
     }
-    var todaysExpenses = 0.0
+    
     
     init(income: Double, expenses: Double, today: Int) {
         self.baseIncome = income
@@ -57,11 +62,31 @@ class BalanceInPeriod {
         self.runningIncome = income
         self.runningExpenses = expenses
         self.today = today
+        initializeTodayBalance()
     }
     
+    //    convenience init () {
+    //        self.init()
+    //        self.todayBalance = dailyBudget
+    //    }
+    
+    // Пиздец костыль
+    func initializeTodayBalance () {
+        todayBalance = dailyBudget
+    }
+    
+    
+    
     func spend (money: Double) {
-        runningExpenses = runningExpenses + money
-        todaysExpenses += money
+        if money <= dailyBudget {
+            todaysExpenses = money
+            todayBalance = todayBalance! - money
+        } else {
+            runningExpenses = runningExpenses + money
+            todaysExpenses += money
+            todayBalance = dailyBudget
+        }
+        
     }
     
     func dailyPercentage ()-> Double {
