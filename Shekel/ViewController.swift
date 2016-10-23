@@ -11,16 +11,20 @@ import UIKit
 class ViewController: UIViewController {
     
     var userBalance = BalanceInPeriod(income: 50000.0, expenses: 0.0, today: 1)
+
+    @IBOutlet weak var BG: UIView!
+    //BG Gradient set UP
+    let gradient = CAGradientLayer()
     
-    @IBOutlet weak var spendFiled: UITextField!
-    @IBAction func spendMoney(_ sender: AnyObject) {
-        userBalance.spend(money: Double(spendFiled.text!)!)
-        console()
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       console()
-       
+        let color1 = RGBtoUIColor(red: 215, green: 217, blue: 202)
+        let color2 = RGBtoUIColor(red: 219, green: 216, blue: 196)
+        gradient.frame = BG.bounds
+        gradient.colors = [color1.cgColor, color2.cgColor]
+        BG.layer.insertSublayer(gradient, at: 0)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,5 +40,12 @@ class ViewController: UIViewController {
         print("balance: \(userBalance.balance)")
         print(userBalance.plannedBudget)
     }
+}
+func RGBtoUIColor (red: Int, green: Int, blue: Int) -> UIColor {
+    let redFloat = Float(red)/255.0
+    let greenFloat = Float(green)/255.0
+    let blueFloat = Float(blue)/255.0
+    let output = UIColor(red: CGFloat(redFloat), green: CGFloat(greenFloat), blue: CGFloat(blueFloat), alpha: 1.0)
+    return output
 }
 
