@@ -10,8 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var userBalance = BalanceInPeriod(income: 50000.0, expenses: 0.0, today: 1)
 
+    var userBalance = DailyBalance(income: 50000.0, expenses: 0.0, today: 1)
+//    var operationHistoryInPeriod = [
     @IBOutlet weak var BG: UIView!
     @IBOutlet weak var ring: Ring!
     //BG Gradient set UP
@@ -19,6 +20,7 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        let timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(displayMoney), userInfo: nil, repeats: false)
         super.viewDidLoad()
         let color1 = RGBtoUIColor(red: 215, green: 217, blue: 202)
         let color2 = RGBtoUIColor(red: 219, green: 216, blue: 196)
@@ -27,13 +29,9 @@ class ViewController: UIViewController {
         BG.layer.insertSublayer(gradient, at: 0)
         userBalance.spend(money: 200)
         ring.animateInitial()
-        let timer = Timer(timeInterval: 10, target: self, selector: ("displayMoney"), userInfo: nil, repeats: false)
-        timer.fire()
-        
+//        timer.fire()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

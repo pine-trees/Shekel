@@ -46,5 +46,7 @@ class Ring: UIImageView {
         self.animationDuration = 3*(Double(endFrame)/100)
         self.animationRepeatCount = 1
         self.startAnimating()
+        
     }
+    
 }

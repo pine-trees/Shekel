@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BalanceInPeriod {
+class DailyBalance {
     let date = Date()
     let calendar = Calendar.current
     var today: Int
@@ -65,10 +65,6 @@ class BalanceInPeriod {
         initializeTodayBalance()
     }
     
-    //    convenience init () {
-    //        self.init()
-    //        self.todayBalance = dailyBudget
-    //    }
     
     // Пиздец костыль
     func initializeTodayBalance () {
@@ -90,7 +86,7 @@ class BalanceInPeriod {
     }
     
     func dailyPercentage ()-> Int {
-        let percent = 100*(todaysExpenses/dailyBudget)
+        let percent = 100*(todaysExpenses/todayBalance!)
         return Int(percent)
         
     }
