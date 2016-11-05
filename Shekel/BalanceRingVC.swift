@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BalanceRingVC: UIViewController {
     
 
     var userBalance = DailyBalance(income: 50000.0, expenses: 0.0, today: 1)
