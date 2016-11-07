@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		442224531DBD5628004658F2 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442224521DBD5628004658F2 /* Ring.swift */; };
+		444597F11DCFAE9E00DCF303 /* Interface_elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444597F01DCFAE9E00DCF303 /* Interface_elements.swift */; };
 		446919361DBAC9780084BE80 /* BalanceInPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446919351DBAC9780084BE80 /* BalanceInPeriod.swift */; };
+		44C4ABF41DD1235400439BE1 /* subtractMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C4ABF31DD1235400439BE1 /* subtractMoney.swift */; };
 		44C758411DAD7E770082DB7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C758401DAD7E770082DB7E /* AppDelegate.swift */; };
 		44C758431DAD7E770082DB7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C758421DAD7E770082DB7E /* ViewController.swift */; };
 		44C758461DAD7E770082DB7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C758441DAD7E770082DB7E /* Main.storyboard */; };
@@ -18,7 +20,9 @@
 
 /* Begin PBXFileReference section */
 		442224521DBD5628004658F2 /* Ring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
+		444597F01DCFAE9E00DCF303 /* Interface_elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interface_elements.swift; sourceTree = "<group>"; };
 		446919351DBAC9780084BE80 /* BalanceInPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceInPeriod.swift; sourceTree = "<group>"; };
+		44C4ABF31DD1235400439BE1 /* subtractMoney.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subtractMoney.swift; sourceTree = "<group>"; };
 		44C7583D1DAD7E770082DB7E /* Shekel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shekel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C758401DAD7E770082DB7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44C758421DAD7E770082DB7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 		44C7583F1DAD7E770082DB7E /* Shekel */ = {
 			isa = PBXGroup;
 			children = (
+				44C4ABF31DD1235400439BE1 /* subtractMoney.swift */,
+				444597F01DCFAE9E00DCF303 /* Interface_elements.swift */,
 				44C758401DAD7E770082DB7E /* AppDelegate.swift */,
 				446919351DBAC9780084BE80 /* BalanceInPeriod.swift */,
 				44C758421DAD7E770082DB7E /* ViewController.swift */,
@@ -142,8 +148,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C4ABF41DD1235400439BE1 /* subtractMoney.swift in Sources */,
 				44C758431DAD7E770082DB7E /* ViewController.swift in Sources */,
 				442224531DBD5628004658F2 /* Ring.swift in Sources */,
+				444597F11DCFAE9E00DCF303 /* Interface_elements.swift in Sources */,
 				446919361DBAC9780084BE80 /* BalanceInPeriod.swift in Sources */,
 				44C758411DAD7E770082DB7E /* AppDelegate.swift in Sources */,
 			);

@@ -28,8 +28,8 @@
                                     <constraint firstAttribute="width" constant="300" id="fe3-UN-ITQ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3500 ₽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaA-eh-F3s">
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="38"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3500 ₽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaA-eh-F3s" customClass="centralMoneyLabel" customModule="Shekel" customModuleProvider="target">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.43095847964286804" green="0.57647058823529407" blue="0.50431567430496216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
@@ -50,12 +50,42 @@
                     </view>
                     <connections>
                         <outlet property="BG" destination="aEc-s5-9G0" id="Fs0-Tz-vt6"/>
+                        <outlet property="moneyLabel" destination="PaA-eh-F3s" id="g37-Ea-U2J"/>
                         <outlet property="ring" destination="XrU-yv-Ocl" id="J1Q-VJ-VOh"/>
+                        <segue destination="CTc-BT-RFY" kind="show" identifier="goToSubtract" id="pJn-sp-2AL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--Subtract MoneyVC-->
+        <scene sceneID="38y-Zc-aPF">
+            <objects>
+                <viewController id="CTc-BT-RFY" customClass="subtractMoneyVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dbL-n3-fR1"/>
+                        <viewControllerLayoutGuide type="bottom" id="qc2-kF-Kab"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MBt-Hx-7Wh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MJU-Ls-xKB" userLabel="BG">
+                                <frame key="frameInset" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.84313725490000002" green="0.85098039219999999" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="view" destination="MJU-Ls-xKB" id="9Ut-0B-hx3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HEn-LP-Ba5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940" y="129"/>
         </scene>
     </scenes>
     <resources>
